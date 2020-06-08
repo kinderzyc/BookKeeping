@@ -16,9 +16,17 @@ body{
     font-family: $font-hei;
     font-size: 16px;
     line-height: 1.2;
+    background: rgb(237, 237, 237);
+}
+button{
+        font-family: inherit;
 }
 .icon{
     width: 2em;
     height: 2em;
-    // display: inline-block;
+    display: inline-block;
+}
+
+:focus{
+    outline: none;
 }
