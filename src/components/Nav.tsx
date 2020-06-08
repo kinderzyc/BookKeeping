@@ -25,9 +25,9 @@ background: white;
             height: 26px;
           }
           &.selected{
-            color: rgb(64, 180, 117);
+            color: #00A292;
             .icon{
-              fill: rgb(64, 180, 117);
+              fill: #00A292;
             }
           }
         }
