@@ -4,6 +4,11 @@ import styled from "styled-components";
 
 const TagsSection = styled.section`
   background: #fff;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
   padding: 12px 16px;
     ol{
       margin: 0 -12px;
@@ -74,12 +79,54 @@ const CategorySection = styled.section`
 `;
 
 const NumberPadSection = styled.section`
+display: flex;
+flex-direction: column;
+  > .output{
+    background: white;
+    width:  95%;
+    margin:  0 auto;
+    display: flex;
+    border-radius: 4px;
+    font-size: 36px;
+    line-height: 72px;
+    padding: 0 16px;
+    > div{
+      text-align: right;
+      flex-grow:1;
+    }
+  }
+  > .pad{
+      width:95%;
+      margin: 0 auto;
+      > button{
+        float: left;
+        width:25%;
+        height: 64px;
+        background: white;
+        border-radius:6px;
+        border: 4px solid #FAFAFA;
+        outline: none;
+        font-size: 18px;
+        &.ok{
+          float: right;
+          height: 128px;
+        }
+        &.xxx{
+          float:left;
+          width: 50%;
+        }
+      }
+  }
+`;
 
+const MyLayout = styled(Layout)`
+  display: flex;
+  flex-direction: column;
 `;
 
 function Money() {
   return (
-    <Layout>
+    <MyLayout>
       <TagsSection>
         <ol>
           <li>衣</li>
@@ -102,23 +149,28 @@ function Money() {
         </ul>
       </CategorySection>
       <NumberPadSection>
+        <div className="output">
+        <span>￥</span>
         <div>100</div>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>删除</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>清空</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>OK</button>
-        <button>0</button>
-        <button>.</button>
+          </div>
+        <div className="pad clearfix">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>删除</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>清空</button>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button className="ok">OK</button>
+          <button className="xxx">0</button>
+          <button>.</button>
+        </div>
       </NumberPadSection>
-    </Layout>
+    </MyLayout>
 
   );
 }
