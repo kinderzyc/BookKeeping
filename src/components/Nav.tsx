@@ -42,17 +42,17 @@ const Nav = () => {
         <li>
           <NavLink to="/tags" replace activeClassName="selected">
             <Icon name="tag" />
-            标签页面</NavLink>
+            明细</NavLink>
         </li>
         <li>
           <NavLink to="/money" replace activeClassName="selected">
             <Icon name="money" />
-            记账页面</NavLink>
+            记账</NavLink>
         </li>
         <li>
           <NavLink to="/statistics" replace activeClassName="selected">
             <Icon name="chart" />
-            统计页面</NavLink>
+            统计</NavLink>
         </li>
       </ul>
     </NavWrapper>
