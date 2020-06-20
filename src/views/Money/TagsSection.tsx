@@ -40,41 +40,41 @@ padding: 12px 16px;
 `;
 
 type Props = {
-  value: string[];
-  onChange: (selected: string[]) => void;
+  value: number[];
+  onChange: (selected: number[]) => void;
 };
 const TagsSection: React.FC<Props> = (props) => {
   const { tags, setTags } = useTags();
-  const selectedTags = props.value;
+  const selectedTagIds = props.value;
   const onAddTag = () => {
     const tagName = window.prompt('新标签名称为');
     if (tagName !== null) {
-      setTags([...tags, tagName]);
-    }
-  };
-  const onToggleTag = (tag: string) => {
-    const index = selectedTags.indexOf(tag);
-    if (index >= 0) {
-      props.onChange(selectedTags.filter(t => t !== tag));
-      //如果 tag 已被选中，就复制所有没有被选中的 tag，作为新的 selectedTag
-    } else {
-      props.onChange([...selectedTags, tag]);
-    }
-  };
-  const getClass = (tag: string) => selectedTags.indexOf(tag) >= 0 ? 'selected' : '';
-  return (
-    <Wrapper>
-      <ol>
-        {tags.map(tag =>
-          <li key={tag} onClick={
-            () => { onToggleTag(tag); }
-          } className={getClass(tag)}
-          >{tag}</li>
-        )}
-      </ol>
-      <button onClick={onAddTag}>新增标签</button>
-    </Wrapper>
-  )
+      setTags([...tags, { id: Math.random(), name: tagName}]);
+  }
+};
+const onToggleTag = (tagId: number) => {
+  const index = selectedTagIds.indexOf(tagId);
+  if (index >= 0) {
+    props.onChange(selectedTagIds.filter(t => t !== tagId));
+    //如果 tag 已被选中，就复制所有没有被选中的 tag，作为新的 selectedTag
+  } else {
+    props.onChange([...selectedTagIds, tagId]);
+  }
+};
+const getClass = (tagId: number) => selectedTagIds.indexOf(tagId) >= 0 ? 'selected' : '';
+return (
+  <Wrapper>
+    <ol>
+      {tags.map(tag =>
+        <li key={tag.id} onClick={
+          () => { onToggleTag(tag.id); }
+        } className={getClass(tag.id)}
+        >{tag.name}</li>
+      )}
+    </ol>
+    <button onClick={onAddTag}>新增标签</button>
+  </Wrapper>
+)
 }
 
 export { TagsSection };
