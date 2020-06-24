@@ -23,7 +23,7 @@ padding: 12px 16px;
       text-align: center;
       /* padding: 4px 18px; */
       font-size: 16px;
-      margin: 8px 14px;
+      margin: 8px 17px;
       &.selected{
         background: #F26B14;
         color:  white;
@@ -45,14 +45,8 @@ type Props = {
   onChange: (selected: number[]) => void;
 };
 const TagsSection: React.FC<Props> = (props) => {
-  const { tags, setTags } = useTags();
+  const { tags, AddTag } = useTags();
   const selectedTagIds = props.value;
-  const onAddTag = () => {
-    const tagName = window.prompt('新标签名称为');
-    if (tagName !== null) {
-      setTags([...tags, { id: createId(), name: tagName}]);
-  }
-};
 const onToggleTag = (tagId: number) => {
   const index = selectedTagIds.indexOf(tagId);
   if (index >= 0) {
@@ -73,7 +67,7 @@ return (
         >{tag.name}</li>
       )}
     </ol>
-    <button onClick={onAddTag}>新增标签</button>
+    <button onClick={AddTag}>新增标签</button>
   </Wrapper>
 )
 }
