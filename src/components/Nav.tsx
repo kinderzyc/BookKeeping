@@ -42,7 +42,7 @@ const Nav = () => {
         <li>
           <NavLink to="/tags" replace activeClassName="selected">
             <Icon name="tag" />
-            明细</NavLink>
+            标签</NavLink>
         </li>
         <li>
           <NavLink to="/money" replace activeClassName="selected">

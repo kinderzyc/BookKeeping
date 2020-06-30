@@ -5,9 +5,9 @@ const Wrapper = styled.section`
     margin-bottom: 15px;
     font-size: 24px;
     color: #fff;
+    background: #00A292;
     > ul{
       display: flex;
-      background: #00A292;
       > li{
         width: 50%;
         text-align: center;
