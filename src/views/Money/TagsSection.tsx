@@ -15,14 +15,13 @@ padding: 12px 16px;
     margin: 0 auto;
         > li{
       background: #D9D9D9;
-      width: 50px;
-      height: 50px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       display: inline-block;
-      line-height: 50px;
+      line-height: 80px;
       text-align: center;
-      /* padding: 4px 18px; */
-      font-size: 16px;
+      font-size: 18px;
       margin: 8px 17px;
       &.selected{
         background: #F26B14;
@@ -47,29 +46,29 @@ type Props = {
 const TagsSection: React.FC<Props> = (props) => {
   const { tags, AddTag } = useTags();
   const selectedTagIds = props.value;
-const onToggleTag = (tagId: number) => {
-  const index = selectedTagIds.indexOf(tagId);
-  if (index >= 0) {
-    props.onChange(selectedTagIds.filter(t => t !== tagId));
-    //如果 tag 已被选中，就复制所有没有被选中的 tag，作为新的 selectedTag
-  } else {
-    props.onChange([...selectedTagIds, tagId]);
-  }
-};
-const getClass = (tagId: number) => selectedTagIds.indexOf(tagId) >= 0 ? 'selected' : '';
-return (
-  <Wrapper>
-    <ol>
-      {tags.map(tag =>
-        <li key={tag.id} onClick={
-          () => { onToggleTag(tag.id); }
-        } className={getClass(tag.id)}
-        >{tag.name}</li>
-      )}
-    </ol>
-    <button onClick={AddTag}>新增标签</button>
-  </Wrapper>
-)
+  const onToggleTag = (tagId: number) => {
+    const index = selectedTagIds.indexOf(tagId);
+    if (index >= 0) {
+      props.onChange(selectedTagIds.filter(t => t !== tagId));
+      //如果 tag 已被选中，就复制所有没有被选中的 tag，作为新的 selectedTag
+    } else {
+      props.onChange([...selectedTagIds, tagId]);
+    }
+  };
+  const getClass = (tagId: number) => selectedTagIds.indexOf(tagId) >= 0 ? 'selected' : '';
+  return (
+    <Wrapper>
+      <ol>
+        {tags.map(tag =>
+          <li key={tag.id} onClick={
+            () => { onToggleTag(tag.id); }
+          } className={getClass(tag.id)}
+          >{tag.name}</li>
+        )}
+      </ol>
+      <button onClick={AddTag}>新增标签</button>
+    </Wrapper>
+  )
 }
 
 export { TagsSection };
