@@ -14,18 +14,18 @@ padding: 12px 16px;
   ol{
     margin: 0 auto;
         > li{
+      width: 65px;
+      height: 65px;
       background: #D9D9D9;
-      width: 80px;
-      height: 80px;
       border-radius: 50%;
       display: inline-block;
-      line-height: 80px;
+      line-height: 65px;
       text-align: center;
-      font-size: 18px;
-      margin: 8px 17px;
+      font-size: 16px;
+      margin: 8px 10px;
       &.selected{
         background: #F26B14;
-        color:  white;
+        color:white;
       }
     }
   }
