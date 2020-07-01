@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Nav from "./Nav";
 import styled from "styled-components";
 
@@ -19,24 +19,39 @@ const Main = styled.div`
 //   color: white;
 //   border-bottom-left-radius: 8px;
 //   border-bottom-right-radius: 8px;
-  
+
 //   .title{
 //     text-align: center;
 //     font-size: 20px;
 //   }
 // `;
 
-const Layout = (props: any) => {
+type Props = {
+  className?: string;
+  scrollTop?: number;
+}
+
+const Layout: React.FC<Props> = (props) => {
+  const mainRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    setTimeout(() => { 
+      if (!mainRef.current) { return; }
+      mainRef.current.scrollTop = props.scrollTop!;
+    },0);
+  }, [props.scrollTop])
   return (
     <Wrapper>
       {/* <Header>
         <p className="title">记账本</p>
       </Header> */}
-      <Main className={props.className}>
+      <Main ref={mainRef} className={props.className}>
         {props.children}
       </Main>
       <Nav />
     </Wrapper>
   );
+};
+Layout.defaultProps = {
+  scrollTop: 0
 };
 export default Layout;

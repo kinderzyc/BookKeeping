@@ -21,6 +21,7 @@ const TagList = styled.ol`
     border-radius: 6px;
     background: white;
     box-shadow: 2px 2px 6px 0px #dfdbdb;
+    font-weight: bolder;
     >a{
       display: flex;
       justify-content: space-between;

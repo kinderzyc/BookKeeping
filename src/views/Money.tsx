@@ -24,9 +24,9 @@ const defaultFormDate = {
 
 function Money() {
   const [selected, setSelected] = useState(defaultFormDate);
-  const { records, addRecord } = useRecords();
-  console.log('records');
-  console.log(records);
+  const { addRecord } = useRecords();
+  // console.log('records');
+  // console.log(records);
   const onChange = (obj: Partial<typeof selected>) => {
     setSelected({ ...selected, ...obj })
   }
@@ -38,7 +38,7 @@ function Money() {
 
   };
   return (
-    <MyLayout>
+    <MyLayout scrollTop={9999}>
       <TagsSection value={selected.tagIds}
         onChange={tagIds => onChange({ tagIds })} />
       <NotesSection value={selected.note}

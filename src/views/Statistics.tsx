@@ -67,14 +67,14 @@ function Statistics() {
     if (a[0] < b[0]) return 1;
     return 0;
   });
-  console.log(array)
+  // console.log(array)
   return (
     <Layout>
       <CategroyWrapper>
         <CategorySection value={category}
           onChange={value => setCategory(value)} />
       </CategroyWrapper>
-      {array.map(([date, records]) => <div>
+      {array.map(([date, records]) => <div key={date}>
         <Header>
           {date}
         </Header>
