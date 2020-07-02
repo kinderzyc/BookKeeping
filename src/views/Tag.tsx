@@ -40,7 +40,7 @@ const InputWrapper = styled.div`
     box-shadow: 1px 1px 10px #dfdfdf;
 `;
 
-const Tag: React.FC = (props) => {
+const Tag: React.FC = () => {
     const { findTag, updateTag, deleteTag } = useTags()
     let { id: idString } = useParams<Params>()
     const tag = findTag(parseInt(idString));
@@ -54,7 +54,6 @@ const Tag: React.FC = (props) => {
                 />
             </InputWrapper>
             <Center>
-                <Space />
                 <Space />
                 <Space />
                 <Button onClick={() => deleteTag(tag.id)}>删除</Button>

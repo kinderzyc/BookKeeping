@@ -4,6 +4,7 @@ import { useTags } from "hooks/useTags";
 
 
 const Wrapper = styled.section`
+flex-shrink: 0;
 background: #fff;
 flex-grow: 1;
 display: flex;
@@ -31,10 +32,12 @@ padding: 12px 16px;
      font-family: inherit;
      background: none;
      border: none;
-     border-bottom: 1px solid #888;
+     border: 1px solid #888;
      padding: 0 4px;
      color: #888;
-     margin-top: 50px; 
+     margin-top: 10px;
+     border-radius: 8px; 
+     min-height: 40px;
   }
 `;
 

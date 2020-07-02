@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.section`
 display: flex;
+min-height: 300px;
 flex-direction: column;
   > .output{
     background: white;
@@ -12,6 +13,7 @@ flex-direction: column;
     font-size: 36px;
     line-height: 72px;
     padding: 0 16px;
+    min-height: 72px;
     > div{
       text-align: right;
       flex-grow:1;

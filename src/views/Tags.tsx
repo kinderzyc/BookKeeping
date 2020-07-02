@@ -48,7 +48,6 @@ function Tags() {
       <Center>
         <Space />
         <Space />
-        <Space />
         <Button onClick={AddTag}>新增标签</Button>
       </Center>
 
