@@ -14,15 +14,13 @@ padding: 12px 16px;
   ol{
     margin: 0 auto;
         > li{
-      width: 65px;
-      height: 65px;
       background: #D9D9D9;
-      border-radius: 50%;
+      border-radius: 18px;
       display: inline-block;
-      line-height: 65px;
       text-align: center;
       font-size: 16px;
-      margin: 8px 10px;
+      margin: 8px 8px;
+      padding: 6px 26px;
       &.selected{
         background: #F26B14;
         color:white;
@@ -30,12 +28,13 @@ padding: 12px 16px;
     }
   }
   > button{
+     font-family: inherit;
      background: none;
      border: none;
      border-bottom: 1px solid #888;
      padding: 0 4px;
      color: #888;
-     margin-top: 15px; 
+     margin-top: 50px; 
   }
 `;
 

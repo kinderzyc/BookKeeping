@@ -21,7 +21,7 @@ flex-direction: column;
       width:95%;
       margin: 0 auto;
       > button{
-        float: left;
+        float:left;
         width:25%;
         height: 64px;
         background: white;
@@ -30,11 +30,10 @@ flex-direction: column;
         outline: none;
         font-size: 18px;
         &.ok{
-          float: right;
+          float:right;
           height: 128px;
         }
         &.xxx{
-          float:left;
           width: 50%;
         }
       }
