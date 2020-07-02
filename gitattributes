@@ -1,5 +1,0 @@
- *.js linguist-language=typescript
- *.scss linguist-language=typescript
- *.html linguist-language=typescript
- *.react linguist-language=typescript
-
